@@ -13,7 +13,7 @@ namespace EmployeeUIWeb.Controllers
     {
         DiscoveryHttpClientHandler _handler;
         ILogger<HomeController> _logger;
-        private const string EMPLOYEE_SERVICE_URL = "http://localhost:52419/api/values/";
+        private const string EMPLOYEE_SERVICE_URL = "http://employee-api.cglean.com/api/values/";
 
         public HomeController(IDiscoveryClient client, ILoggerFactory logFactory)
         {
