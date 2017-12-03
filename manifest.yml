@@ -4,5 +4,6 @@ applications:
   memory: 512M
   instances: 1
   buildpack: dotnet_core_buildpack
+  path: EmployeeUIWeb\bin\Release\PublishOutput
 services:
     - myDiscoveryService

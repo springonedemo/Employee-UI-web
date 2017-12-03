@@ -20,7 +20,7 @@ namespace EmployeeUIWeb.Controllers
             _handler = new DiscoveryHttpClientHandler(client);
             // Remove comment to use SSL communications with Self-Signed Certs
             _handler.ServerCertificateCustomValidationCallback = (a,b,c,d) => {return true;};
-            //_logger = logFactory.CreateLogger<HomeController>();
+            _logger = logFactory.CreateLogger<HomeController>();
 
         }
 
@@ -69,7 +69,7 @@ namespace EmployeeUIWeb.Controllers
             using (var client = GetClient())
             {
 
-                //await client.GetStringAsync("https://employee.cglean.com/api/values/" + id.ToString());
+                //await client.GetStringAsync("https://employee-api.azure.cap-spring1demo.com/api/values/" + id.ToString());
                 response = await client.GetStringAsync(EMPLOYEE_SERVICE_URL + id.ToString());
                 _logger.LogInformation("Get Employee Details: {0}", response);
                 _Data = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(response.ToString());
