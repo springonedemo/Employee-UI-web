@@ -13,14 +13,14 @@ namespace EmployeeUIWeb.Controllers
     {
         DiscoveryHttpClientHandler _handler;
         ILogger<HomeController> _logger;
-        private const string EMPLOYEE_SERVICE_URL = "http://employee-api.cglean.com/api/values/";
+        private const string EMPLOYEE_SERVICE_URL = "http://employee-api.azure.capspring1demo.com/api/values/";
 
         public HomeController(IDiscoveryClient client, ILoggerFactory logFactory)
         {
-            _handler = new DiscoveryHttpClientHandler(client, logFactory.CreateLogger<DiscoveryHttpClientHandler>());
+            _handler = new DiscoveryHttpClientHandler(client);
             // Remove comment to use SSL communications with Self-Signed Certs
-            // _handler.ServerCertificateCustomValidationCallback = (a,b,c,d) => {return true;};
-            _logger = logFactory.CreateLogger<HomeController>();
+            _handler.ServerCertificateCustomValidationCallback = (a,b,c,d) => {return true;};
+            //_logger = logFactory.CreateLogger<HomeController>();
 
         }
 

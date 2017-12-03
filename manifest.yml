@@ -1,0 +1,8 @@
+---
+applications:
+- name: Employee-UI-Web
+  memory: 512M
+  instances: 1
+  buildpack: dotnet_core_buildpack
+services:
+    - myDiscoveryService
